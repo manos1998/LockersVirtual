@@ -10,7 +10,7 @@ public class FileLocker {
     static String DIRECTORY;
     File folder_name;
 
-    public  FileLocker() {
+    public FileLocker() {
         DIRECTORY = System.getProperty("user.dir");
         folder_name = new File(DIRECTORY+"/files");
         if (!folder_name.exists())
@@ -88,6 +88,7 @@ public class FileLocker {
     void mainMenu() { //Creating a Function Main for Accepting Main Menu
         System.out.println(MAIN_MENU);
         try(Scanner sc = new Scanner(System.in)){
+        
         int option = sc.nextInt();
         switch(option){
             case 1: {
@@ -103,9 +104,11 @@ public class FileLocker {
                 break;
             }
             default: mainMenu();
-        }}
+        }
+        }
         catch(Exception e){
             System.out.println("Enter your options");
+            mainMenu();
         }
     }
 
