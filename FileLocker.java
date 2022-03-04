@@ -30,7 +30,6 @@ public class FileLocker {
             case 2: {
                 secondMenu();
                 System.out.println("Second Menu");
-                break;
             }
             case 3: {
                 System.out.println("Thank you for using our services");
@@ -44,7 +43,36 @@ public class FileLocker {
         System.out.println(SECOND_MENU);
         Scanner sc = new Scanner(System.in);
         char[] sec_opt = sc.nextLine().toUpperCase().trim().toCharArray(); //Value acceptance test Successful
-        System.out.println(sec_opt);
+        char secndry_opt = sec_opt[0];
+        switch (secndry_opt) {
+            case 'A':{
+                System.out.println("\nFile is being added \n Enter File Name: \n" );
+                String filename = sc.next().trim().toLowerCase();
+                System.out.println("File Added with file name "+ filename);
+                break;
+            }
+            case 'D': {
+                System.out.println("\n File is being deleted \n Enter File Name: \n" );
+                String filename = sc.next().trim();
+                System.out.println("File Deleted with file name "+ filename);
+                break;
+            }
+            case 'S': {
+                System.out.println("\n File is being Search \n Enter File Name: \n" );
+                String filename = sc.next().trim();
+                System.out.println("File is being search with file name "+ filename);
+                break;
+            }
+            case 'M': {
+                System.out.println("Going Back to Main Menun");
+                mainMenu();
+                break;
+            }
+            default:
+                System.out.println("Please Enter Right Values Only");
+                break;
+        }
+        secondMenu();
     }
 
     public static void main(String[] args) {
