@@ -28,6 +28,7 @@ public class FileLocker {
                 break;
             }
             case 2: {
+                secondMenu();
                 System.out.println("Second Menu");
                 break;
             }
@@ -37,6 +38,13 @@ public class FileLocker {
             }
             default: mainMenu();
         }
+    }
+
+    void secondMenu() {
+        System.out.println(SECOND_MENU);
+        Scanner sc = new Scanner(System.in);
+        char[] sec_opt = sc.nextLine().toUpperCase().trim().toCharArray();
+        System.out.println(sec_opt);
     }
 
     public static void main(String[] args) {
