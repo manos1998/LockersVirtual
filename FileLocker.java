@@ -43,7 +43,7 @@ public class FileLocker {
     void secondMenu() {
         System.out.println(SECOND_MENU);
         Scanner sc = new Scanner(System.in);
-        char[] sec_opt = sc.nextLine().toUpperCase().trim().toCharArray();
+        char[] sec_opt = sc.nextLine().toUpperCase().trim().toCharArray(); //Value acceptance test Successful
         System.out.println(sec_opt);
     }
 
