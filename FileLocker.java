@@ -101,7 +101,8 @@ public class FileLocker {
             }
             case 3: {
                 System.out.println("Thank you for using our services");
-                break;
+                // break;
+                System.exit(0); //break; was creating an error i.e. endless loop so exiting the Loop
             }
             default: mainMenu();
         }
@@ -144,8 +145,7 @@ public class FileLocker {
                 mainMenu();
                 break;
             }
-            default:
-                System.out.println("Please Enter Right Values Only");
+            default: System.out.println("Enter your choice a,d,s,m");
             }
         secondMenu();
         }
