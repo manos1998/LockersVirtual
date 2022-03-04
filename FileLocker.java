@@ -92,6 +92,7 @@ public class FileLocker {
         switch(option){
             case 1: {
                 System.out.println("Show Files & Main Menu");
+                showFiles();
                 mainMenu();
             }
             case 2: {
