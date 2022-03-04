@@ -1,9 +1,20 @@
 import java.util.Scanner;
+import java.io.File;
 
 /**
  * FileLocker
  */
 public class FileLocker {
+    static String DIRECTORY;
+    File folder_name;
+
+    public  FileLocker() {
+        DIRECTORY = System.getProperty("user.dir");
+        folder_name = new File(DIRECTORY+"/files");
+        if (!folder_name.exists())
+            folder_name.mkdirs();
+        System.out.println("DIRECTORY : "+ folder_name.getAbsolutePath());
+    }
 
     private static final String FLASH_SCREEN = "Welcome to Locker We Keep your Privacy"; //Flash Screen like any other Apps
     private static final String MAIN_MENU =  // Main Menu
@@ -25,11 +36,10 @@ public class FileLocker {
         switch(option){
             case 1: {
                 System.out.println("Show Files & Main Menu");
-                break;
+                mainMenu();
             }
             case 2: {
                 secondMenu();
-                System.out.println("Second Menu");
             }
             case 3: {
                 System.out.println("Thank you for using our services");
@@ -71,9 +81,9 @@ public class FileLocker {
             default:
                 System.out.println("Please Enter Right Values Only");
                 break;
-        }
+            }
         secondMenu();
-    }
+        }
 
     public static void main(String[] args) {
         System.out.println(FLASH_SCREEN);
